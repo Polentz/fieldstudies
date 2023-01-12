@@ -1,0 +1,474 @@
+:root {
+    --doc-height: 100%;
+    --font-size: .9rem;
+    --txt-gap: .9rem;
+    --div-gap: 2rem;
+    --bg-color: #fff;
+    --txt-color: #000;
+    --acc-color: #e7e7e7;
+}
+
+.--intro-txt {
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.--intro-txt em {
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+.--copy-txt {
+    font-family: "Playfair Display", serif;
+    font-size: var(--font-size);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.3;
+}
+
+.--copy-txt em {
+    font-family: "Playfair Display", serif;
+    font-size: var(--font-size);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+body {
+    width: 100%;
+    height: var(--doc-height);
+    color: var(--txt-color);
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.nav {
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: var(--font-size);
+    display: flex;
+    justify-content: space-between;
+}
+
+a,
+.nav a,
+.menu-link a,
+.button a {
+    font-style: normal;
+    cursor: pointer;
+}
+
+a:hover,
+.nav a:hover,
+.menu-link a:hover,
+.button a:hover {
+    font-style: italic;
+}
+
+.menu-link a {
+    padding: 4px 8px;
+    background-color: var(--bg-color);
+}
+
+section,
+.main {
+    height: var(--doc-height);
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+}
+
+.main {
+    top: 0;
+    left: 0;
+    background-image: url("../media/sgorbio.svg");
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease;
+}
+
+.header.overlay,
+.main.overlay {
+    opacity: .3;
+}
+
+/* .svg-container {
+    position: fixed;
+    left: -0%;
+    width: 100%;
+    height: var(--doc-height);
+    resize: both;
+    overflow: auto;
+}
+
+.svg-container svg {
+    width: 102%;
+    height: 102%;
+} */
+
+/* .menu-container {
+    position: fixed;
+    width: 100%;
+    height: var(--doc-height);
+}
+
+.menu-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+text {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: var(--font-size);
+    font-style: normal;
+    cursor: pointer;
+}
+
+text:hover {
+    font-style: italic;
+} */
+
+.menu {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: var(--font-size);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 180px;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+.menu.hide {
+    opacity: 0;
+}
+
+.menu-link {
+    position: relative;
+    white-space: nowrap;
+}
+
+.menu-link a {
+    display: inline-block;
+    margin: 4px;
+}
+
+.menu-link:nth-of-type(1) {
+    transform: translateY(55%) translateX(15%);
+    text-align: right;
+}
+
+.menu-link:nth-of-type(2) {
+    transform: translateY(26%);
+    text-align: center;
+    text-indent: 2rem;
+}
+
+.menu-link:nth-of-type(3) {
+    transform: translateY(83%);
+    text-align: left;
+    text-indent: -2rem;
+}
+
+.menu-link:nth-of-type(4) {
+    transform: translateY(90%);
+    text-align: right;
+}
+
+.menu-link:nth-of-type(5) {
+    transform: translateY(20%);
+    text-align: left;
+    text-indent: -1rem;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-title,
+.nav-link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: var(--font-size);
+    display: flex;
+    gap: var(--div-gap);
+    align-items: baseline;
+}
+
+.nav-title:nth-of-type(2) {
+    flex-direction: row-reverse;
+}
+
+.nav-title svg {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.button {
+    width: fit-content;
+    background-color: var(--bg-color);
+    border: solid 1px var(--txt-color);
+    border-radius: 48px;
+    padding: .3rem 1.2rem;
+    text-align: center;
+}
+
+.grid-container {
+    height: calc(var(--doc-height) - 80px);
+    display: flex;
+    gap: var(--div-gap);
+    padding: 0 32px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    top: 80px;
+}
+
+.grid-column {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    overflow-y: scroll;
+    padding-bottom: 32px;
+}
+
+.grid-column-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-column-image img {
+    min-width: 300px;
+    width: 100%;
+}
+
+.grid-column-image .button {
+    transform: translateY(-50%);
+}
+
+.grid-column-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--div-gap);
+}
+
+.grid-column-txt,
+.grid-column-intro,
+.popup-content-txt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--txt-gap);
+}
+
+.grid-column-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--txt-gap);
+}
+
+.grid-column-block .button {
+    margin: 0 auto;
+}
+
+.grid-column-block .grid-column-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.grid-column-block .grid-column-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info-container {
+    width: 300px;
+    top: 80px;
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s .25s ease;
+}
+
+#field-studies {
+    left: 2rem;
+}
+
+#glauco-salvo {
+    right: 2rem;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--div-gap);
+}
+
+.info-content-txt,
+.info-content-button {
+    display: flex;
+    flex-direction: column;
+    gap: var(--txt-gap);
+}
+
+.info-close-button {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s .25s ease;
+}
+
+.info-close-button.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-container {
+    width: calc(50vw - 4rem);
+    height: calc(var(--doc-height) - 80px);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s .25s ease;
+}
+
+.info-container.open,
+.popup-container.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.info-wrapper,
+.popup-wrapper {
+    display: none;
+}
+
+.info-container.open .info-wrapper,
+.popup-container.open .popup-wrapper {
+    display: block;
+}
+
+.popup-header {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.popup-content {
+    width: 100%;
+    height: calc(var(--doc-height) - 160px);
+    background-color: var(--bg-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--div-gap);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.popup-content-image img {
+    width: 100%;
+}
+
+.footer {
+    width: 100vw;
+    position: fixed;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: .75;
+}
+
+.footer svg {
+    fill: var(--acc-color);
+
+}
+
+@media screen and (max-width: 700px) {
+    .menu {
+        display: flex;
+        padding: 80px 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-link {
+        transform: none !important;
+        text-indent: 0 !important;
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    .menu {
+        padding: 120px 1rem;
+    }
+
+    .nav-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-title p {
+        padding: 4px 8px 4px 0;
+        background-color: var(--bg-color);
+    }
+
+    .arrow-left,
+    .arrow-right {
+        display: none;
+    }
+
+    .grid-container {
+        height: auto;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 0 1rem;
+    }
+
+    .grid-column {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+}
