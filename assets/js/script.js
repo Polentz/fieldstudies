@@ -86,6 +86,7 @@ buttonCloseInfo.forEach(btn => {
             };
         });
         btnOpen.style.pointerEvents = "all";
+        menu.classList.remove("hide");
         btn.classList.remove("show");
     });
 });
