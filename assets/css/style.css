@@ -68,6 +68,12 @@ body {
     justify-content: space-between;
 }
 
+a {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: var(--font-size);
+}
+
 a,
 .nav a,
 .menu-link a,

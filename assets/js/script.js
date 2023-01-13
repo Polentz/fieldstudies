@@ -1,7 +1,7 @@
 const buttonLeft = document.querySelector(".arrow-left");
 const buttonRight = document.querySelector(".arrow-right");
 const scrollContainer = document.querySelector(".grid-container");
-const buttonOpenPopup = document.querySelectorAll(".menu-link a");
+const buttonOpenPopup = document.querySelectorAll(".menu-link a, span a");
 const elementPopup = document.querySelectorAll(".popup-container");
 const buttonClosePopup = document.querySelectorAll(".popup-close-button");
 const header = document.querySelector(".header");
@@ -70,10 +70,6 @@ buttonClosePopup.forEach(btn => {
         if (navTitle) {
             navTitle.style.visibility = "visible"
         }
-        if (contentPopup) {
-            console.log("yes")
-            contentPopup.scrollTop
-        }
         buttonOpenPopup.forEach(btn => {
             btn.classList.remove("current");
         })
@@ -117,6 +113,7 @@ buttonCloseInfo.forEach(btn => {
 for (let i = 0; i < imagesContainer.length; i++) {
     const container = imagesContainer[i];
     const imagesArray = container.querySelectorAll("figure");
+
     imagesArray.forEach(image => {
         let clone = image.cloneNode(true);
         contentPopup.appendChild(clone);
