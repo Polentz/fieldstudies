@@ -493,6 +493,7 @@ text:hover {
 
 @media screen and (max-width: 500px) {
     .header {
+        width: 100vw;
         padding: 0 1rem;
     }
 
@@ -510,9 +511,13 @@ text:hover {
         background-color: var(--bg-color);
     }
 
+    .main-background {
+        opacity: .5;
+    }
+
     .info-container {
-        width: auto;
-        margin: 0 1rem;
+        width: 100%;
+        padding: 0 1rem;
         left: 0 !important;
     }
 

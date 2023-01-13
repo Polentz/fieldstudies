@@ -6,6 +6,7 @@
     }
     path {
         stroke: #000;
+        stroke-width: 1px;
         stroke-miterlimit: 10;
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
