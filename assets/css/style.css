@@ -71,6 +71,7 @@ body {
 a,
 .nav a,
 .menu-link a,
+.nav-link a,
 .button a {
     font-style: normal;
     cursor: pointer;
@@ -79,6 +80,8 @@ a,
 a:hover,
 .nav a:hover,
 .menu-link a:hover,
+.menu-link a.current,
+.nav-link a.current,
 .button a:hover {
     font-style: italic;
 }
@@ -97,6 +100,13 @@ section,
 }
 
 .main {
+    transition: all .5s ease;
+}
+
+.main-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     background-image: url("../media/sgorbio.svg");
@@ -104,21 +114,24 @@ section,
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: all .5s ease;
+    pointer-events: none;
 }
 
 .header.overlay,
-.main.overlay {
+.main.overlay,
+.grid-container.overlay {
     opacity: .3;
 }
 
 /* .svg-container {
     position: fixed;
-    left: -0%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    height: var(--doc-height);
-    resize: both;
-    overflow: auto;
+    height: 100%;
+    resize: none;
+    overflow: hidden;
 }
 
 .svg-container svg {
@@ -155,6 +168,8 @@ text:hover {
     font-size: var(--font-size);
     width: 100%;
     height: 100%;
+    position: fixed;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding: 0 180px;
@@ -220,10 +235,11 @@ text:hover {
     align-items: baseline;
 }
 
-.nav-title:nth-of-type(2) {
+.nav-link:nth-of-type(2) {
     flex-direction: row-reverse;
 }
 
+.nav-link svg,
 .nav-title svg {
     width: 10px;
     height: 10px;
@@ -267,6 +283,16 @@ text:hover {
 .grid-column-image img {
     min-width: 300px;
     width: 100%;
+    cursor: pointer;
+    transition: filter .5s ease;
+}
+
+.grid-column-image img:hover {
+    filter: brightness(0);
+}
+
+.grid-column-image figcaption {
+    display: none;
 }
 
 .grid-column-image .button {
@@ -311,6 +337,7 @@ text:hover {
 
 .info-container {
     width: 300px;
+    height: auto;
     top: 80px;
     z-index: 4;
     opacity: 0;
@@ -379,25 +406,38 @@ text:hover {
 }
 
 .popup-header {
-    margin: 2rem 0;
+    height: 80px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .popup-content {
     width: 100%;
     height: calc(var(--doc-height) - 160px);
     background-color: var(--bg-color);
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: var(--div-gap);
     overflow-x: hidden;
     overflow-y: scroll;
+    border-bottom: solid 1rem var(--bg-color);
+    border-left: solid 1rem var(--bg-color);
+    border-right: solid 1rem var(--bg-color);
 }
 
-.popup-content-image img {
+.popup-content-image img,
+.image-wrapper img {
     width: 100%;
+}
+
+.image-wrapper figcaption {
+    font-family: "Playfair Display", serif;
+    font-size: var(--font-size);
+    font-weight: 400;
+    font-style: italic;
 }
 
 .footer {
@@ -414,6 +454,19 @@ text:hover {
 .footer svg {
     fill: var(--acc-color);
 
+}
+
+.new-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.new-section img {
+    width: 100%;
 }
 
 @media screen and (max-width: 700px) {
@@ -451,6 +504,12 @@ text:hover {
         background-color: var(--bg-color);
     }
 
+    .info-container {
+        width: auto;
+        margin: 0 1rem;
+        left: 0 !important;
+    }
+
     .arrow-left,
     .arrow-right {
         display: none;
@@ -470,5 +529,22 @@ text:hover {
         max-width: 100%;
         height: auto;
         padding-bottom: 1rem;
+    }
+
+    .popup-container {
+        width: 100%;
+        height: var(--doc-height);
+    }
+
+    .popup-header {
+        width: 100%;
+        position: fixed;
+        padding: 0 1rem;
+    }
+
+    .popup-content {
+        height: var(--doc-height);
+        border: none;
+        padding: 80px 1rem 1rem 1rem;
     }
 }

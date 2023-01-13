@@ -177,14 +177,12 @@ img::selection {
     background-color: transparent;
 }
 
-/* ::-moz-selection {
-    background-color: transparent;
-    color: var(--orange);
-    mix-blend-mode: difference;
+::-moz-selection {
+    background-color: var(--bg-color);
+    color: var(--acc-color);
 }
 
 ::selection {
-    background-color: transparent;
-    color: var(--orange);
-    mix-blend-mode: difference;
-} */
+    background-color: var(--bg-color);
+    color: var(--acc-color);
+}
