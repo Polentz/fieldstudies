@@ -110,8 +110,7 @@ buttonCloseInfo.forEach(btn => {
     });
 });
 
-for (let i = 0; i < imagesContainer.length; i++) {
-    const container = imagesContainer[i];
+imagesContainer.forEach(container => {
     const imagesArray = container.querySelectorAll("figure");
 
     imagesArray.forEach(image => {
@@ -132,5 +131,29 @@ for (let i = 0; i < imagesContainer.length; i++) {
             }, 400);
         })
     })
-}
+})
+
+// for (let i = 0; i < imagesContainer.length; i++) {
+//     const container = imagesContainer[i];
+//     const imagesArray = container.querySelectorAll("figure");
+
+//     imagesArray.forEach(image => {
+//         let clone = image.cloneNode(true);
+//         contentPopup.appendChild(clone);
+//     });
+
+//     images = container.querySelectorAll("img");
+//     images.forEach(img => {
+//         img.addEventListener("click", () => {
+//             elementPopup.forEach(element => {
+//                 element.classList.add("open");
+//             });
+//             scrollContainer.classList.add("overlay");
+//             header.classList.add("overlay");
+//             setTimeout(() => {
+//                 navTitle.style.visibility = "hidden";
+//             }, 400);
+//         })
+//     })
+// }
 

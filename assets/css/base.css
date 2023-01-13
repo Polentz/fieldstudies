@@ -186,3 +186,14 @@ img::selection {
     background-color: var(--bg-color);
     color: var(--acc-color);
 }
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--doc-height);
+    vertical-align: bottom;
+    z-index: 1;
+    pointer-events: none;
+}
