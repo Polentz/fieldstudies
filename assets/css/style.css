@@ -92,8 +92,9 @@ a:hover,
     font-style: italic;
 }
 
-.menu-link a {
-    padding: 4px 8px;
+.menu-link a,
+.nav-link a {
+    /* padding: 4px 8px; */
     background-color: var(--bg-color);
 }
 
@@ -203,15 +204,13 @@ text:hover {
 }
 
 .menu-link:nth-of-type(2) {
-    transform: translateY(26%);
+    transform: translateY(26%) translateX(5%);
     text-align: center;
-    text-indent: 2rem;
 }
 
 .menu-link:nth-of-type(3) {
-    transform: translateY(83%);
+    transform: translateY(83%) translateX(-25%);
     text-align: left;
-    text-indent: -2rem;
 }
 
 .menu-link:nth-of-type(4) {
@@ -220,9 +219,8 @@ text:hover {
 }
 
 .menu-link:nth-of-type(5) {
-    transform: translateY(20%);
+    transform: translateY(20%) translateX(-15%);
     text-align: left;
-    text-indent: -1rem;
 }
 
 .arrow-left,
@@ -253,7 +251,7 @@ text:hover {
     height: 10px;
     cursor: pointer;
     background-color: var(--bg-color);
-    outline: solid 4px var(--bg-color);
+    outline: solid 2px var(--bg-color);
 }
 
 .button {
@@ -349,7 +347,7 @@ text:hover {
     width: 300px;
     height: auto;
     top: 80px;
-    z-index: 4;
+    z-index: 3;
     opacity: 0;
     pointer-events: none;
     transition: all .5s .25s ease;
@@ -393,7 +391,7 @@ text:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 4;
     opacity: 0;
     pointer-events: none;
     transition: all .5s .25s ease;
@@ -477,7 +475,6 @@ text:hover {
 
     .menu-link {
         transform: none !important;
-        text-indent: 0 !important;
         text-align: center !important;
     }
 }
