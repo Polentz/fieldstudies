@@ -62,6 +62,11 @@ buttonOpenPopup.forEach(btn => {
 buttonClosePopup.forEach(btn => {
     btn.addEventListener("click", () => {
         elementPopup.forEach(element => {
+            const wrapper = element.querySelector(".popup-content");
+            wrapper.scroll({
+                top: 0,
+                left: 0
+            });
             element.classList.remove("open");
         });
         header.classList.remove("overlay");
@@ -71,8 +76,8 @@ buttonClosePopup.forEach(btn => {
         if (scrollContainer) {
             scrollContainer.classList.remove("overlay");
         };
-        elementInfo.forEach(el => {
-            el.classList.remove("overlay");
+        elementInfo.forEach(element => {
+            element.classList.remove("overlay");
         });
         if (navTitle) {
             navTitle.style.visibility = "visible"
@@ -102,6 +107,11 @@ nav.forEach(n => {
     });
     close.addEventListener("click", () => {
         elementInfo.forEach(element => {
+            const wrapper = element.querySelector(".info-wrapper");
+            wrapper.scroll({
+                top: 0,
+                left: 0
+            });
             if (btnTarget === element.id) {
                 element.classList.remove("open");
                 close.style.opacity = "0";
