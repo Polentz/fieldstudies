@@ -179,12 +179,12 @@ img::selection {
 
 ::-moz-selection {
     background-color: var(--bg-color);
-    color: var(--acc-color);
+    color: var(--vivid-color);
 }
 
 ::selection {
     background-color: var(--bg-color);
-    color: var(--acc-color);
+    color: var(--vivid-color);
 }
 
 canvas {

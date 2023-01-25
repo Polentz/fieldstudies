@@ -6,6 +6,7 @@
     --bg-color: #fff;
     --txt-color: #000;
     --acc-color: #e7e7e7;
+    --vivid-color: rgb(248, 42, 63);
 }
 
 .--intro-txt {
@@ -93,8 +94,8 @@ a:hover,
 }
 
 .menu-link a,
-.nav-link a {
-    /* padding: 4px 8px; */
+.nav-link a,
+.txt-link a {
     background-color: var(--bg-color);
 }
 
@@ -126,48 +127,11 @@ section,
 
 .header.overlay,
 .main.overlay,
-.grid-container.overlay {
+.grid-container.overlay,
+.info-container.open.overlay {
     opacity: .3;
+    pointer-events: none;
 }
-
-/* .svg-container {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    resize: none;
-    overflow: hidden;
-}
-
-.svg-container svg {
-    width: 102%;
-    height: 102%;
-} */
-
-/* .menu-container {
-    position: fixed;
-    width: 100%;
-    height: var(--doc-height);
-}
-
-.menu-container svg {
-    width: 100%;
-    height: 100%;
-}
-
-text {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: var(--font-size);
-    font-style: normal;
-    cursor: pointer;
-}
-
-text:hover {
-    font-style: italic;
-} */
 
 .menu {
     font-family: "Playfair Display", serif;
@@ -228,7 +192,7 @@ text:hover {
     width: 1.5rem;
     cursor: pointer;
     background-color: var(--bg-color);
-    outline: solid 4px var(--bg-color);
+    outline: solid 2px var(--bg-color);
 }
 
 .nav-title,
@@ -345,12 +309,17 @@ text:hover {
 
 .info-container {
     width: 300px;
-    height: auto;
+    height: calc(var(--doc-height) - 160px);
     top: 80px;
     z-index: 3;
     opacity: 0;
     pointer-events: none;
     transition: all .5s .25s ease;
+}
+
+.info-wrapper {
+    height: var(--doc-height);
+    overflow-y: scroll;
 }
 
 #field-studies {
@@ -507,6 +476,7 @@ text:hover {
         width: 100%;
         padding: 0 1rem;
         left: 0 !important;
+        background-color: var(--bg-color);
     }
 
     .arrow-left,
