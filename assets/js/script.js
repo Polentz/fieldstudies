@@ -11,7 +11,6 @@ const nav = document.querySelectorAll(".nav-link");
 const elementInfo = document.querySelectorAll(".info-container");
 const buttonCloseInfo = document.querySelectorAll(".info-close-button");
 const menu = document.querySelector(".menu");
-const columnWrapper = document.querySelectorAll(".grid-column");
 const imagesContainer = document.querySelectorAll(".grid-column-image");
 const contentPopup = document.querySelector(".popup-content");
 
@@ -115,7 +114,7 @@ nav.forEach(n => {
     });
 });
 
-
+// one image at a time
 imagesContainer.forEach(container => {
     const imagesArray = container.querySelectorAll("figure");
     imagesArray.forEach(img => {
@@ -142,17 +141,14 @@ imagesContainer.forEach(container => {
     });
 });
 
+// all images
 // imagesContainer.forEach(container => {
 //     const imagesArray = container.querySelectorAll("figure");
-
 //     imagesArray.forEach(image => {
 //         let clone = image.cloneNode(true);
 //         contentPopup.appendChild(clone);
-//     });
 
-//     const images = container.querySelectorAll("img");
-//     images.forEach(img => {
-//         img.addEventListener("click", () => {
+//         image.addEventListener("click", () => {
 //             elementPopup.forEach(element => {
 //                 element.classList.add("open");
 //             });
