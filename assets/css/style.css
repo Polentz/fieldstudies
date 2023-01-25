@@ -309,7 +309,7 @@ section,
 
 .info-container {
     width: 300px;
-    height: calc(var(--doc-height) - 160px);
+    height: calc(var(--doc-height) - 80px);
     top: 80px;
     z-index: 3;
     opacity: 0;
