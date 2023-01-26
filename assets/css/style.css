@@ -9,6 +9,16 @@
     --vivid-color: #e62448;
 }
 
+body {
+    width: 100%;
+    height: var(--doc-height);
+    color: var(--txt-color);
+}
+
+canvas.hide {
+    display: none;
+}
+
 .--intro-txt {
     font-family: "Open Sans", sans-serif;
     font-size: var(--font-size);
@@ -38,12 +48,6 @@
     font-weight: 400;
     font-style: italic;
     line-height: 1.3;
-}
-
-body {
-    width: 100%;
-    height: var(--doc-height);
-    color: var(--txt-color);
 }
 
 .header {

@@ -55,7 +55,7 @@ buttonOpenPopup.forEach(btn => {
         elementInfo.forEach(el => {
             el.classList.add("overlay");
         });
-        canvas.style.display = "none";
+        canvas.classList.add("hide");
     });
 });
 
@@ -85,7 +85,9 @@ buttonClosePopup.forEach(btn => {
         buttonOpenPopup.forEach(btn => {
             btn.classList.remove("current");
         });
-        canvas.style.display = "block";
+        if (canvas.classList.contains("hide")) {
+            canvas.classList.remove("hide");
+        }
     });
 });
 
@@ -104,6 +106,7 @@ nav.forEach(n => {
                 };
             };
         });
+        canvas.classList.add("hide");
     });
     close.addEventListener("click", () => {
         elementInfo.forEach(element => {
@@ -121,6 +124,9 @@ nav.forEach(n => {
                 };
             };
         });
+        if (canvas.classList.contains("hide")) {
+            canvas.classList.remove("hide");
+        }
     });
 });
 
