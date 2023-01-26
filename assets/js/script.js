@@ -1,7 +1,7 @@
 const buttonLeft = document.querySelector(".arrow-left");
 const buttonRight = document.querySelector(".arrow-right");
 const scrollContainer = document.querySelector(".grid-container");
-const buttonOpenPopup = document.querySelectorAll(".menu-link a, .--txt-link");
+const buttonOpenPopup = document.querySelectorAll(".menu-link a, .--txt-link, .--open-popup a");
 const elementPopup = document.querySelectorAll(".popup-container");
 const buttonClosePopup = document.querySelectorAll(".popup-close-button");
 const header = document.querySelector(".header");
@@ -87,6 +87,9 @@ buttonClosePopup.forEach(btn => {
         });
         if (canvas.classList.contains("hide")) {
             canvas.classList.remove("hide");
+        }
+        if (btn.classList.contains("--special")) {
+            canvas.classList.add("hide");
         }
     });
 });
