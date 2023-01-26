@@ -1,7 +1,7 @@
 const buttonLeft = document.querySelector(".arrow-left");
 const buttonRight = document.querySelector(".arrow-right");
 const scrollContainer = document.querySelector(".grid-container");
-const buttonOpenPopup = document.querySelectorAll(".menu-link a, .--txt-link, .--open-popup a");
+const buttonOpenPopup = document.querySelectorAll(".menu-link a, span.--txt-link, .--open-popup a");
 const elementPopup = document.querySelectorAll(".popup-container");
 const buttonClosePopup = document.querySelectorAll(".popup-close-button");
 const header = document.querySelector(".header");
