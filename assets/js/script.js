@@ -130,41 +130,12 @@ nav.forEach(n => {
     });
 });
 
-// one image at a time
-// imagesContainer.forEach(container => {
-//     const imagesArray = container.querySelectorAll("figure");
-//     imagesArray.forEach(img => {
-//         img.addEventListener("click", () => {
-//             let clone = img.cloneNode(true);
-//             contentPopup.appendChild(clone);
-//             elementPopup.forEach(element => {
-//                 element.classList.add("open");
-//             });
-//             scrollContainer.classList.add("overlay");
-//             header.classList.add("overlay");
-//             setTimeout(() => {
-//                 navTitle.style.visibility = "hidden";
-//             }, 400);
-//         });
-//     });
-//     buttonClosePopup.forEach(btn => {
-//         btn.addEventListener("click", () => {
-//             const figureArray = contentPopup.querySelectorAll("figure");
-//             figureArray.forEach(figure => {
-//                 figure.remove()
-//             })
-//         });
-//     });
-// });
-
-// all images
 imagesContainer.forEach(container => {
     const imagesArray = container.querySelectorAll("figure");
-    imagesArray.forEach(image => {
-        let clone = image.cloneNode(true);
-        contentPopup.appendChild(clone);
-
-        image.addEventListener("click", () => {
+    imagesArray.forEach(img => {
+        img.addEventListener("click", () => {
+            let clone = img.cloneNode(true);
+            contentPopup.appendChild(clone);
             elementPopup.forEach(element => {
                 element.classList.add("open");
             });
@@ -173,6 +144,14 @@ imagesContainer.forEach(container => {
             setTimeout(() => {
                 navTitle.style.visibility = "hidden";
             }, 400);
+        });
+    });
+    buttonClosePopup.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const figureArray = contentPopup.querySelectorAll("figure");
+            figureArray.forEach(figure => {
+                figure.remove()
+            })
         });
     });
 });
