@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -74,68 +74,65 @@
     <section id="grid-container" class="grid-container cms-editable">
         <div class="grid-column cms-repeatable">
             <div class="grid-column-content">
+                <div class="grid-column-block --copy-txt">
+                    <p>2023</p>
+                </div>
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>26.2.2023</p>
                         <p>Radici, Cotignola (RA)</p>
-                        <p><em>w/Giovanni Lami</em></p>
+                        <p>w/Giovanni Lami</p>
                         <figure>
-                            <img src="assets/upload/calendar/live-seneghe-1.jpg" alt="Glauco Salvo plays in Seneghe">
                             <figcaption>Some caption</figcaption>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="grid-column cms-repeatable">
-            <div class="grid-column-content cms-lock">
+            <div class="grid-column-content">
+                <div class="grid-column-block --copy-txt">
+                    <p>2022</p>
+                </div>
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>26.11.2022</p>
                         <p>Q-O2, Bruxelles (BE)</p>
-                        <p><em>w/Aymeric de Tapol</em></p>
+                        <p>w/Aymeric de Tapol</p>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>15-30.11.2022</p>
                         <p>Residency at Q-O2, Bruxelles (BE)</p>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>1.9.2022</p>
                         <p>Cabudanne de sos Poetas, Seneghe (OR)</p>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>3.9.2022</p>
                         <p>Bmotion Musica/OperaEstate Festival, Bassano del Grappa (VI)</p>
-                        <figure>
-                            <img src="assets/upload/calendar/residenza-bassano.jpg" alt="">
-                        </figure>
+                        <figure><img src="assets/upload/calendar/residenza-bassano.jpg" alt></figure>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>8.8.2022</p>
-                        <p>Elementi, Cesenatico (FC) (duo w/Annamaria Ajmone)</p>
+                        <p>Elementi, Cesenatico (FC)</p>
+                        <p>duo w/Annamaria Ajmone</p>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>19-28.7.2022</p>
                         <p>Residency at Cabudanne de sos Poetas, Seneghe (OR)</p>
                     </div>
                 </div>
-
                 <div class="grid-column-block cms-repeatable">
                     <div class="grid-column-dates --copy-txt">
                         <p>25.6.2022</p>
@@ -146,17 +143,19 @@
         </div>
     </section>
 
-    <section id="popup-container" class="popup-container cms-editable">
+    <section id="popup-container" class="popup-container">
         <div class="popup-wrapper">
-            <div class="popup-header cms-lock">
+            <div class="popup-header">
                 <div class="nav-title">
                     <p>Field Studies / Calendar / Gallery</p>
-                    <svg class="popup-close-button" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.00005 1L9 9M8.99995 1L1 9" stroke="black" />
-                    </svg>
+                    <div class="popup-close-button">
+                        <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.00005 1L9 9M8.99995 1L1 9" stroke="black" />
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div class="popup-content">
+            <div id="gallery" class="popup-content cms-editable">
                 <!-- not empty -->
             </div>
         </div>
