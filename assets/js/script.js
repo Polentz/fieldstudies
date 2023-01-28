@@ -134,7 +134,7 @@ nav.forEach(n => {
 });
 
 imagesContainer.forEach(container => {
-    const imagesArray = container.querySelectorAll("figure");
+    const imagesArray = container.querySelectorAll("img");
     imagesArray.forEach(img => {
         img.addEventListener("click", () => {
             let clone = img.cloneNode(true);
@@ -151,9 +151,9 @@ imagesContainer.forEach(container => {
     });
     buttonClosePopup.forEach(btn => {
         btn.addEventListener("click", () => {
-            const figureArray = contentPopup.querySelectorAll("figure");
-            figureArray.forEach(figure => {
-                figure.remove()
+            const images = contentPopup.querySelectorAll("img");
+            images.forEach(img => {
+                img.remove()
             })
         });
     });
