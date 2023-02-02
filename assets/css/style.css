@@ -677,9 +677,15 @@ section,
 
     .info-container {
         width: 100%;
+        height: var(--doc-height);
         padding: 0 1rem;
         left: 0 !important;
         background-color: var(--bg-color);
+    }
+
+    .info-wrapper {
+        height: var(--doc-height);
+        padding-bottom: 1rem;
     }
 
     .arrow-left,
@@ -707,8 +713,9 @@ section,
     }
 
     .popup-container {
+        position: fixed;
         width: 100%;
-        height: var(--doc-height);
+        height: fit-content;
     }
 
     .popup-header {
@@ -718,7 +725,8 @@ section,
     }
 
     .popup-content {
-        height: var(--doc-height);
+        max-height: var(--doc-height);
+        min-height: var(--doc-height);
         border: none;
         padding: 80px 1rem 1rem 1rem;
     }

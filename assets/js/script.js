@@ -13,6 +13,7 @@ const buttonCloseInfo = document.querySelectorAll(".info-close-button");
 const menu = document.querySelector(".menu");
 const imagesContainer = document.querySelectorAll(".grid-column-content");
 const contentPopup = document.querySelector(".popup-content");
+const cursor = document.querySelector("canvas");
 
 const documentHeight = () => {
     const doc = document.documentElement;
@@ -55,7 +56,7 @@ buttonOpenPopup.forEach(btn => {
         elementInfo.forEach(el => {
             el.classList.add("overlay");
         });
-        canvas.classList.add("hide");
+        cursor.classList.add("hide");
     });
 });
 
@@ -85,11 +86,11 @@ buttonClosePopup.forEach(btn => {
         buttonOpenPopup.forEach(btn => {
             btn.classList.remove("current");
         });
-        if (canvas.classList.contains("hide")) {
-            canvas.classList.remove("hide");
+        if (cursor.classList.contains("hide")) {
+            cursor.classList.remove("hide");
         }
         if (btn.classList.contains("--special")) {
-            canvas.classList.add("hide");
+            cursor.classList.add("hide");
         }
     });
 });
@@ -109,7 +110,7 @@ nav.forEach(n => {
                 };
             };
         });
-        canvas.classList.add("hide");
+        cursor.classList.add("hide");
     });
     close.addEventListener("click", () => {
         elementInfo.forEach(element => {
@@ -127,8 +128,8 @@ nav.forEach(n => {
                 };
             };
         });
-        if (canvas.classList.contains("hide")) {
-            canvas.classList.remove("hide");
+        if (cursor.classList.contains("hide")) {
+            cursor.classList.remove("hide");
         }
     });
 });
